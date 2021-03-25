@@ -1,6 +1,6 @@
 {
   "name": "hlark",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "an javascript toolbox",
   "main": "index.js",
   "scripts": {
