@@ -1,6 +1,6 @@
 {
   "name": "hlark",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "an javascript toolbox",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/huxiaohao2019/hlark.git"
   },
-
   "keywords": [
     "typescript",
     "javascript",
