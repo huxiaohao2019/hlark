@@ -13,6 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/huxiaohao2019/hlark.git"
   },
+
   "keywords": [
     "typescript",
     "javascript",
@@ -25,6 +26,9 @@
   },
   "homepage": "https://github.com/huxiaohao2019/hlark#readme",
   "types": "index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "files": [
     "index.js",
     "index.d.ts",
