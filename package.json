@@ -4,7 +4,8 @@
   "description": "an javascript toolbox",
   "main": "index.js",
   "scripts": {
-    "publish1": "git add . && git commit -m 1 && npm version patch && npm publish",
+    "p0": "npm version patch && npm publish",
+    "publish1": "git add . && git commit -m 1 && npm run p0",
     "rollup1": "rollup -c rollup.config.js",
     "build": "tsc -m umd && tsc -m es2015 -d false && npm run rollup1 && node build-replace.js",
     "p1": "npm run publish1"
