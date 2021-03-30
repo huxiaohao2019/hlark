@@ -15,6 +15,20 @@ declare namespace hlark {
      * @param {any[]} baseCtors
      */
     function applyClassMixins(derivedCtor: any, baseCtors: any[]): void;
+    interface EnsureFuncOptions {
+        fn: Function;
+        tryCount?: number;
+        timeInterval?: number;
+    }
+    /**
+     *
+     *
+     * @export
+     * @param {Function} fn
+     * @param {number} [tryCount=3]
+     * @param {number} [timeInterval=1000]
+     */
+    function ensureFuncSuccess(options: EnsureFuncOptions): void;
 }
 export = hlark;
 export as namespace hlark;

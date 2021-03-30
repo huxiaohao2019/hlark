@@ -36,6 +36,35 @@
             });
         }
         hlark.applyClassMixins = applyClassMixins;
+        /**
+         *
+         *
+         * @export
+         * @param {Function} fn
+         * @param {number} [tryCount=3]
+         * @param {number} [timeInterval=1000]
+         */
+        function ensureFuncSuccess(options) {
+            var fn = options.fn, _a = options.tryCount, tryCount = _a === void 0 ? 3 : _a, _b = options.timeInterval, timeInterval = _b === void 0 ? 1000 : _b;
+            var runedCount = 0;
+            function doFn() {
+                var result = fn();
+                runedCount += 1;
+                console.log("🚀 ~ doFn ~ runedCount", runedCount);
+                if (result == true) {
+                    return true;
+                }
+                else {
+                    if (runedCount < tryCount) {
+                        setTimeout(function () {
+                            doFn();
+                        }, timeInterval);
+                    }
+                }
+            }
+            doFn();
+        }
+        hlark.ensureFuncSuccess = ensureFuncSuccess;
     })(hlark || (hlark = {}));
     var hlark$1 = hlark;
 

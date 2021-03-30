@@ -28,6 +28,41 @@ namespace hlark {
             })
         });
     }
+
+    export interface EnsureFuncOptions {
+        fn: Function;
+        tryCount?: number;
+        timeInterval?: number;
+    }
+
+
+    /**
+     * 
+     *
+     * @export
+     * @param {Function} fn
+     * @param {number} [tryCount=3]
+     * @param {number} [timeInterval=1000]
+     */
+    export function ensureFuncSuccess(options: EnsureFuncOptions) {
+        let { fn, tryCount = 3, timeInterval = 1000 } = options;
+        let runedCount = 0;
+        function doFn() {
+            let result = fn();
+            runedCount += 1;
+            console.log("🚀 ~ doFn ~ runedCount", runedCount);
+            if (result == true) {
+                return true;
+            } else {
+                if (runedCount < tryCount) {
+                    setTimeout(() => {
+                        doFn();
+                    }, timeInterval);
+                }
+            }
+        }
+        doFn();
+    }
 }
 
 export default hlark;
